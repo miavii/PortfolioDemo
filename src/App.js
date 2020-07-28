@@ -1,20 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component }from 'react';
 import './App.css';
 import SideMenu from './components/SideMenu/SideMenu';
+import LandingImage from "./components/LandingImage/LandingImage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Initial Edit boop
-        </p>
-      </header>
-      <SideMenu/>
-    </div>
-  );
+class App extends Component {
+  state = {
+    photo: ""
+  };
+
+  componentDidMount() {
+      fetch(`https://api.nasa.gov/planetary/apod?api_key=KS2QrTygGu6iYEU1jpuhFRjZdNPr3suWi7uiiNCD`)
+        .then(response => response.json())
+        .then(json => this.setState({ photo: json }));
+    }
+
+
+
+
+
+  render() {
+    return (
+      <div className="App">
+        <LandingImage photo={this.state.photo} />
+        <SideMenu/>
+      </div>
+    );
+  }
 }
 
 export default App;
