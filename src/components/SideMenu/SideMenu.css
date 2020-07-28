@@ -1,0 +1,22 @@
+.SideMenu {
+  background-color: #1111117a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+  padding-right: 60px;
+}
+.SideMenu a {
+  padding: 10px 8px 10px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
