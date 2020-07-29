@@ -5,7 +5,7 @@ import Pdf from './CV_MiaLahtinen_2020.pdf';
 class ResumePage extends Component {
   render () {
     return (
-      <div className = "resumeContainer">
+      <div id="resume" className = "resumeContainer">
         <a href = {Pdf} target = "_blank">Download Pdf</a>
       </div>
     );

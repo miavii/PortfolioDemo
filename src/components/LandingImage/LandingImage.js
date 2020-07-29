@@ -2,7 +2,7 @@ import React from "react";
 import './LandingImage.css';
 
 const LandingImage = props => (
-  <div className="hero" style={{ backgroundImage:`url(${props.photo.hdurl})` }}>
+  <div id="home" className="hero" style={{ backgroundImage:`url(${props.photo.hdurl})` }}>
     <div className="colorlayer">
     </div>
     <div className="title-container">

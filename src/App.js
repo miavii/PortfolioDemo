@@ -20,8 +20,8 @@ class App extends Component {
     return (
       <div className="App">
         <LandingImage photo={this.state.photo} />
-        <SideMenu/>
-        <ResumePage/>
+        <SideMenu />
+        <ResumePage />
       </div>
     );
   }
