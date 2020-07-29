@@ -1,11 +1,13 @@
 import React, { Component }from 'react';
 import './App.css';
 import SideMenu from './components/SideMenu/SideMenu';
-import LandingImage from "./components/LandingImage/LandingImage";
+import LandingImage from './components/LandingImage/LandingImage';
+import ResumePage from './components/ResumePage/ResumePage';
 
 class App extends Component {
   state = {
     photo: ""
+
   };
 
   componentDidMount() {
@@ -19,6 +21,7 @@ class App extends Component {
       <div className="App">
         <LandingImage photo={this.state.photo} />
         <SideMenu/>
+        <ResumePage/>
       </div>
     );
   }
