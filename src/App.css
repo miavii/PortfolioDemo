@@ -2,6 +2,7 @@
   text-align: center;
   height: 100%;
   font-size: calc(10px + 2vmin);
+  background-color: #282c34;
 }
 
 .App-logo {

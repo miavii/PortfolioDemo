@@ -14,10 +14,6 @@ class App extends Component {
         .then(json => this.setState({ photo: json }));
     }
 
-
-
-
-
   render() {
     return (
       <div className="App">
