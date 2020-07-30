@@ -1,7 +1,7 @@
 import React, { Component }from 'react';
 import './App.css';
 import SideMenu from './components/SideMenu/SideMenu';
-import LandingImage from './components/LandingImage/LandingImage';
+import BackgroundImage from './components/BackgroundImage/BackgroundImage';
 import ResumePage from './components/ResumePage/ResumePage';
 import TitleContainer from './components/TitleContainer/TitleContainer';
 
@@ -20,10 +20,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TitleContainer/>
-        <LandingImage photo={this.state.photo} />
         <SideMenu />
+        <TitleContainer/>
+        <BackgroundImage photo={this.state.photo} />
         <ResumePage />
+        <BackgroundImage photo={this.state.photo} />
       </div>
     );
   }

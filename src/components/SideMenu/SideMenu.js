@@ -3,27 +3,27 @@ import HomeIcon from "./../../icons/home.png"
 import GalleryIcon from "./../../icons/code.png"
 import ResumeIcon from "./../../icons/clip.png"
 import AboutIcon from "./../../icons/about.png"
-import NavItem from '../MenuItem/MenuItem';
+import {IconButton} from '../IconButton/IconButton';
 import './SideMenu.css';
 
 const menu = [
   {
-    id: 'home',
+    url: '#home',
     name: 'home',
     icon: HomeIcon,
   },
   {
-    id: 'gallery',
+    url: '#gallery',
     name: 'gallery',
     icon: GalleryIcon,
   },
   {
-    id: 'resume',
+    url: '#resume',
     name: 'resume',
     icon: ResumeIcon,
   },
   {
-    id: 'about',
+    url: '#about',
     name: 'about',
     icon: AboutIcon,
   },
@@ -31,7 +31,7 @@ const menu = [
 
 class SideMenu extends Component {
   render() {
-    const NavList = menu.map((item) => <NavItem text={item.name} icon={item.icon}/>);
+    const NavList = menu.map((item) => <IconButton text={item.name} icon={item.icon} url={item.url} />);
     return (
       <div className="SideMenu">
         {NavList}

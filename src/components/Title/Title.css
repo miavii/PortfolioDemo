@@ -13,6 +13,9 @@ span {
 }
 .main{
   font-size: 2.5rem;
-  padding: 0 5px;
+  padding: 0 8px;
   border-bottom: solid 1px #fff;
+}
+.title{
+  padding: 1em 1em;
 }
