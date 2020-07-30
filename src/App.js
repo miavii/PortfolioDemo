@@ -4,11 +4,11 @@ import SideMenu from './components/SideMenu/SideMenu';
 import BackgroundImage from './components/BackgroundImage/BackgroundImage';
 import ResumePage from './components/ResumePage/ResumePage';
 import TitleContainer from './components/TitleContainer/TitleContainer';
+import AboutPage from './components/AboutPage/AboutPage';
 
 class App extends Component {
   state = {
     photo: ""
-
   };
 
   componentDidMount() {
@@ -21,10 +21,16 @@ class App extends Component {
     return (
       <div className="App">
         <SideMenu />
-        <TitleContainer/>
-        <BackgroundImage photo={this.state.photo} />
+        <div id="home">
+          <TitleContainer/>
+          <BackgroundImage photo={this.state.photo} />
+        </div>
+
         <ResumePage />
-        <BackgroundImage photo={this.state.photo} />
+        <div id="about" className="container">
+          <AboutPage />
+          <BackgroundImage photo={this.state.photo} />
+        </div>
       </div>
     );
   }
