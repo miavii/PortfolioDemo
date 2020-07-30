@@ -5,10 +5,6 @@ const LandingImage = props => (
   <div id="home" className="hero" style={{ backgroundImage:`url(${props.photo.hdurl})` }}>
     <div className="colorlayer">
     </div>
-    <div className="title-container">
-      <span className="name">Mia Lahtinen</span>
-      <span className="title">Web Developer</span>
-      </div>
     <div className="credits"><span>{props.photo.title}</span> by {props.photo.copyright}</div>
   </div>
 );

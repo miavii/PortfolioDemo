@@ -3,6 +3,7 @@ import './App.css';
 import SideMenu from './components/SideMenu/SideMenu';
 import LandingImage from './components/LandingImage/LandingImage';
 import ResumePage from './components/ResumePage/ResumePage';
+import TitleContainer from './components/TitleContainer/TitleContainer';
 
 class App extends Component {
   state = {
@@ -19,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <TitleContainer/>
         <LandingImage photo={this.state.photo} />
         <SideMenu />
         <ResumePage />
