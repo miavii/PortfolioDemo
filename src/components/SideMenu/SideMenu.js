@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 import HomeIcon from "./../../icons/home.png"
 import GalleryIcon from "./../../icons/code.png"
 import ResumeIcon from "./../../icons/clip.png"
 import AboutIcon from "./../../icons/about.png"
+import NavItem from '../MenuItem/MenuItem';
 import './SideMenu.css';
 
-function SideMenu() {
-  return (
-    <div className="SideMenu">
-      <a className="home" href="#">
-        <img className="icon" src={HomeIcon}/>
-        <span className="text">home</span></a>
-      <a className="gallery" href="#">
-        <img className="icon" src={GalleryIcon}/>
-        <span className="text">gallery</span></a>
-      <a className="resume" href="#">
-        <img className="icon" src={ResumeIcon}/>
-        <span className="text">resume</span></a>
-      <a className="about" href="#">
-        <img className="icon" src={AboutIcon}/>
-        <span className="text">about</span></a>
-    </div>
-  );
+const menu = [
+  {
+    id: 'home',
+    name: 'home',
+    icon: HomeIcon,
+  },
+  {
+    id: 'gallery',
+    name: 'gallery',
+    icon: GalleryIcon,
+  },
+  {
+    id: 'resume',
+    name: 'resume',
+    icon: ResumeIcon,
+  },
+  {
+    id: 'about',
+    name: 'about',
+    icon: AboutIcon,
+  },
+];
+
+class SideMenu extends Component {
+  render() {
+    const NavList = menu.map((item) => <NavItem text={item.name} icon={item.icon}/>);
+    return (
+      <div className="SideMenu">
+        {NavList}
+      </div>
+    );
+  }
 }
 
 export default SideMenu;
