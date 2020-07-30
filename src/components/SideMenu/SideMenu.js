@@ -8,22 +8,22 @@ import './SideMenu.css';
 
 const menu = [
   {
-    url: '#home',
+    myRef: '#home',
     name: 'home',
     icon: HomeIcon,
   },
   {
-    url: '#gallery',
+    myRef: '#gallery',
     name: 'gallery',
     icon: GalleryIcon,
   },
   {
-    url: '#resume',
+    myRef: '#resume',
     name: 'resume',
     icon: ResumeIcon,
   },
   {
-    url: '#about',
+    myRef: '#about',
     name: 'about',
     icon: AboutIcon,
   },
@@ -31,7 +31,7 @@ const menu = [
 
 class SideMenu extends Component {
   render() {
-    const NavList = menu.map((item) => <IconButton text={item.name} icon={item.icon} url={item.url} />);
+    const NavList = menu.map((item) => <IconButton text={item.name} icon={item.icon} my={item.url} />);
     return (
       <div className="SideMenu">
         {NavList}

@@ -7,9 +7,18 @@ import TitleContainer from './components/TitleContainer/TitleContainer';
 import AboutPage from './components/AboutPage/AboutPage';
 
 class App extends Component {
-  state = {
-    photo: ""
-  };
+  constructor(props) {
+    super(props)
+    // Create the ref
+    this.home = React.createRef();
+    this.about = React.createRef();
+    this.gallery = React.createRef();
+    this.resume = React.createRef();
+    this.state = {
+      photo: ""
+    }
+  }
+  ;
 
   componentDidMount() {
       fetch(`https://api.nasa.gov/planetary/apod?api_key=KS2QrTygGu6iYEU1jpuhFRjZdNPr3suWi7uiiNCD`)
@@ -21,13 +30,14 @@ class App extends Component {
     return (
       <div className="App">
         <SideMenu />
-        <div id="home">
+        <div id="home" ref={this.home}>
           <TitleContainer/>
           <BackgroundImage photo={this.state.photo} />
         </div>
-
-        <ResumePage />
-        <div id="about" className="container">
+        <div ref={this.resume}>
+          <ResumePage />
+        </div>
+        <div id="about" ref={this.about} className="container">
           <AboutPage />
           <BackgroundImage photo={this.state.photo} />
         </div>
