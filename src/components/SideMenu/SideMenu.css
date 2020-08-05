@@ -19,7 +19,7 @@
 }
 .SideMenu:hover {
   width: 30vw;
-  background-color: #000000b3;
+  background-color: #00000080;
 }
 .SideMenu:hover .text{
   opacity: 0.8;

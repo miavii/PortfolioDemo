@@ -53,7 +53,7 @@ class App extends Component {
         .then(response => response.json())
         .then(json => {
           // if nasa returns a video, we'll fetch a result from the same day last year
-          let isImage = json.media_type == "image";
+          let isImage = json.media_type === "image";
           if (!isImage){
             let today = new Date();
             let dd = String(today.getDate()).padStart(2, '0');
