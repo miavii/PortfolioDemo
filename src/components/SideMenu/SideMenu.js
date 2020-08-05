@@ -1,37 +1,28 @@
 import React, { Component } from 'react';
-import HomeIcon from "./../../icons/home.png"
-import GalleryIcon from "./../../icons/code.png"
-import ResumeIcon from "./../../icons/clip.png"
-import AboutIcon from "./../../icons/about.png"
 import {IconButton} from '../IconButton/IconButton';
 import './SideMenu.css';
 
-const menu = [
-  {
-    myRef: '#home',
-    name: 'home',
-    icon: HomeIcon,
-  },
-  {
-    myRef: '#gallery',
-    name: 'gallery',
-    icon: GalleryIcon,
-  },
-  {
-    myRef: '#resume',
-    name: 'resume',
-    icon: ResumeIcon,
-  },
-  {
-    myRef: '#about',
-    name: 'about',
-    icon: AboutIcon,
-  },
-];
 
 class SideMenu extends Component {
+  handleOnClick = (reference, event) => {
+          //.current is verification that your element has rendered
+          console.log("scrolling to ", reference);
+          if(reference.current){
+              reference.current.scrollIntoView({
+                 behavior: "smooth",
+                 top: reference.current.offsetTop
+              })
+          }
+  }
   render() {
-    const NavList = menu.map((item) => <IconButton text={item.name} icon={item.icon} my={item.url} />);
+    const nav = this.props.nav;
+    const NavList = nav.map((item) => (
+      <IconButton
+       key={item.id}
+       text={item.name}
+       icon={item.icon}
+       onClick={() => this.handleOnClick(item.ref)}
+       />));
     return (
       <div className="SideMenu">
         {NavList}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IconButton = props => (
-        <button className={props.text} onClick={() => {this.scroll(props.myRef)}}>
+        <button className={props.text} onClick={props.onClick}>
           <img className="icon" src={props.icon} alt={props.text}/>
           <span className="text">{props.text}</span>
         </button>

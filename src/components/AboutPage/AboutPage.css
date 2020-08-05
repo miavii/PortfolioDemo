@@ -2,7 +2,7 @@
   position: absolute;
   display: flex;
   width: 40vw;
-  top: 170%;
+  top: 190%;
   left: 50%;
   transform: translate(-50%, -50%);
   flex-direction: column;
