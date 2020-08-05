@@ -4,8 +4,9 @@ import './SideMenu.css';
 
 
 class SideMenu extends Component {
+
+
   handleOnClick = (reference, event) => {
-          //.current is verification that your element has rendered
           console.log("scrolling to ", reference);
           if(reference.current){
               reference.current.scrollIntoView({

@@ -26,7 +26,7 @@ const list = [
 ];
 class ResumePage extends Component {
   render () {
-    const buttonList = list.map( (item) => <ExternalButton text={item.name} icon={item.icon} url={item.url} />);
+    const buttonList = list.map( (item) => <ExternalButton key={item.name} text={item.name} icon={item.icon} url={item.url} />);
     return (
       <div id="resume" className = "resumeContainer">
         <Title class="semi title" text="Where to find me"/>

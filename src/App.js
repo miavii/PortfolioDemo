@@ -48,9 +48,23 @@ class App extends Component {
   };
 
   componentDidMount() {
+      // fetch an image from NASA's APOD api
       fetch(`https://api.nasa.gov/planetary/apod?api_key=KS2QrTygGu6iYEU1jpuhFRjZdNPr3suWi7uiiNCD`)
         .then(response => response.json())
         .then(json => this.setState({ photo: json }));
+
+      // if nasa returns a video, we'll fetch a result from the same day last year
+      if(!this.state.photo.hdurl){
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        let yyyy = today.getFullYear() - 1;
+        const date = yyyy + "-" + mm + "-" + dd;
+        console.log(yyyy + "-" + mm + "-" + dd);
+        fetch(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=KS2QrTygGu6iYEU1jpuhFRjZdNPr3suWi7uiiNCD`)
+          .then(response => response.json())
+          .then(json => this.setState({ photo: json }));
+      }
     }
 
   render() {
