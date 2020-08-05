@@ -11,6 +11,10 @@
   right: 0;
   overflow-x: hidden;
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  -moz-backdrop-filterr: blur(15px);
+  -ms-backdrop-filter: blur(15px);
+  -o-backdrop-filter: blur(15px);
   transition: all 800ms ease-out;
 }
 .SideMenu:hover {
