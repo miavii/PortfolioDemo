@@ -54,6 +54,8 @@ class App extends Component {
         .then(json => {
           // if nasa returns a video, we'll fetch a result from the same day last year
           let isImage = json.media_type === "image";
+          console.log(isImage);
+
           if (!isImage){
             let today = new Date();
             let dd = String(today.getDate()).padStart(2, '0');
@@ -62,8 +64,11 @@ class App extends Component {
             const date = yyyy + "-" + mm + "-" + dd;
             console.log(yyyy + "-" + mm + "-" + dd);
 
-            return fetch(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=KS2QrTygGu6iYEU1jpuhFRjZdNPr3suWi7uiiNCD`).then(response => response.json());}})
-        .then(json => this.setState({ photo: json }));
+            return fetch(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=KS2QrTygGu6iYEU1jpuhFRjZdNPr3suWi7uiiNCD`).then(response => response.json());
+            }
+          else {
+            this.setState({ photo: json });
+          }});
     }
 
   render() {
